@@ -4,7 +4,11 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
+<<<<<<< HEAD
   # config.secret_key = '179591df0fa8d56aed18d21991f19030f8d0376614c0f847c6736a090ab8109e1efffb4c7678164c9bfc123e1b4f7d41185d345d8a9b64379a44e33b077c8f99'
+=======
+  # config.secret_key = '3d3ba134e01d032fdabba770d28dc2483b656113a10adda3aebd51b0d33d5896df64e19377388d95c5c6ac9a812e2fe453e49b1c6a074f9d6c9dcea6a5a9f259'
+>>>>>>> dc448754244242f5c95a5c32a3ab918c643ac1d3
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -97,7 +101,11 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
+<<<<<<< HEAD
   # config.pepper = '86a1c6d1795185694f91c050eb78bfda23607aed07c750a7b5b1c53f2b1ec61f03f56865c99e37e875ba5a586e0f9987dfe699a052b8f81d3c4d7658c3b76018'
+=======
+  # config.pepper = '94b5e72036161065d64cedb99a258db68bff729fc3d7692b376217f08e6df3688dd9686241b9e3d67a75bc549774aa9d256dc4999f346566f5246fd8432c2a60'
+>>>>>>> dc448754244242f5c95a5c32a3ab918c643ac1d3
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -140,7 +148,11 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
+<<<<<<< HEAD
   config.password_length = 8..72
+=======
+  config.password_length = 8..128
+>>>>>>> dc448754244242f5c95a5c32a3ab918c643ac1d3
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -253,7 +265,11 @@ Devise.setup do |config|
   # The router that invoked `devise_for`, in the example above, would be:
   # config.router_name = :my_engine
   #
+<<<<<<< HEAD
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
+=======
+  # When using omniauth, Devise cannot automatically set Omniauth path,
+>>>>>>> dc448754244242f5c95a5c32a3ab918c643ac1d3
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
