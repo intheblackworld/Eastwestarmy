@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131054213) do
+ActiveRecord::Schema.define(version: 20150131074817) do
 
   create_table "easts", force: true do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150131054213) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.integer  "vote"
+    t.integer  "votes_count", default: 0
     t.integer  "game_id"
   end
 
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20150131054213) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20150131054213) do
     t.integer  "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "vote_east"
-    t.boolean  "vote_west"
+    t.boolean  "vote_east",              default: false
+    t.boolean  "vote_west",              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20150131054213) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.integer  "vote"
+    t.integer  "votes_count", default: 0
     t.integer  "game_id"
   end
 
