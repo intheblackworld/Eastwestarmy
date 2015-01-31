@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131013338) do
+ActiveRecord::Schema.define(version: 20150131050440) do
 
   create_table "easts", force: true do |t|
     t.string   "name"
@@ -23,13 +23,12 @@ ActiveRecord::Schema.define(version: 20150131013338) do
     t.text     "description"
     t.integer  "pkgroup"
     t.integer  "vote"
+    t.integer  "game_id"
   end
 
-  create_table "easts", force: true do |t|
-    t.string   "name"
-    t.string   "food"
-    t.string   "tel"
-    t.text     "add"
+  add_index "easts", ["game_id"], name: "index_easts_on_game_id", unique: true
+
+  create_table "games", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,6 +65,9 @@ ActiveRecord::Schema.define(version: 20150131013338) do
     t.text     "description"
     t.integer  "pkgroup"
     t.integer  "vote"
+    t.integer  "game_id"
   end
+
+  add_index "wests", ["game_id"], name: "index_wests_on_game_id", unique: true
 
 end
