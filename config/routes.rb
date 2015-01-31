@@ -6,12 +6,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'homes#index'
 
-  # resources :rounds do
-  #   collection do
-  #     get :game
-  #   end
-  # end
-
   resources :games do
     member do
       get 'round1'
