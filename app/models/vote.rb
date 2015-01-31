@@ -4,5 +4,4 @@ class Vote < ActiveRecord::Base
 
   scope :east, -> { where(:vote_for => "east") }
   scope :west, -> { where(:vote_for => "west") }
-
 end

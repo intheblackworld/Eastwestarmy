@@ -1,0 +1,45 @@
+<%= render "alert" %>
+
+東軍展示區
+店名 <%= @east.name %>
+菜色 <%= @east.food %>
+菜色描述 <%= @east.description %>
+地址 <%= @east.add %>
+電話 <%= @east.tel %>
+投給 <%= button_to [@east.name, @east.food], vote_e_game_path(@game), method: :post %>
+<br>
+<br>
+
+東軍得票數
+<%= @game.votes.east.count %>
+<br>
+<br>
+
+東軍投票區 <br>
+<% @game.votes.east.each do |east| %>
+  <%= east.user.email %> <br>
+<% end %>
+<br>
+<br>
+
+西軍展示區
+店名 <%= @west.name %>
+菜色 <%= @west.food %>
+菜色描述 <%= @west.description %>
+地址 <%= @west.add %>
+電話 <%= @west.tel %>
+投給 <%= button_to [@west.name, @west.food], vote_w_game_path(@game), method: :post %>
+<br>
+<br>
+
+西軍得票數
+<%= @game.votes.west.count %>
+<br>
+<br>
+
+西軍投票區 <br>
+<% @game.votes.west.each do |west| %>
+  <%= west.user.email %> <br>
+<% end %>
+<br>
+<br>
