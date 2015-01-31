@@ -35,7 +35,7 @@ class GamesController < ApplicationController
   end
 
 
-  private
+  # private
 
   def find_east_and_west
     @game = Game.find(params[:id])
