@@ -16,3 +16,9 @@ zh-TW:
         current_password: '舊密碼'
       product:
         title: '行程名稱'
+  devise:
+    registrations:
+      signed_up: 'Welcome! You have signed up successfully.'
+    sessions:
+      signed_in: '回到戰局'
+      signed_out: '脫離戰局'
