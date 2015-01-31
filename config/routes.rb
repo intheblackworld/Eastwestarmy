@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
       get 'round1'
       get 'round2'
       get 'round3'
+      post 'vote_e'
+      post 'vote_w'
     end
   end
 

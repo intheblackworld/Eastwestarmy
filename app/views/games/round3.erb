@@ -5,7 +5,10 @@
 菜色描述 <%= @east.description %>
 地址 <%= @east.add %>
 電話 <%= @east.tel %>
-投給他 <%= button_to '+1', vote_e_game_path(@game), method: :post %>
+東軍第一回合得票數 <%= @game.votes.east.count %>
+
+
+投給他 <%= button_to @east.name, vote_e_game_path(@game), method: :post %>
 
 
 西軍
@@ -15,7 +18,9 @@
 菜色描述 <%= @west.description %>
 地址 <%= @west.add %>
 電話 <%= @west.tel %>
-投給他 <%= button_to '+1', vote_w_game_path(@game), method: :post %>
+西軍第一回合得票數 <%= @game.votes.west.count %>
+
+投給他 <%= button_to @west.name, vote_w_game_path(@game), method: :post %>
 
 
 <% if @vote.vote_for == 'east' %>
