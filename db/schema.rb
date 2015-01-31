@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150130211022) do
+=======
+ActiveRecord::Schema.define(version: 20150131013338) do
+
+  create_table "easts", force: true do |t|
+    t.string   "name"
+    t.string   "food"
+    t.string   "tel"
+    t.text     "add"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+    t.integer  "pkgroup"
+    t.integer  "vote"
+  end
+>>>>>>> 1a56d37d2d92915dc15a31561696e65b2ef2700b
 
   create_table "easts", force: true do |t|
     t.string   "name"
@@ -49,6 +65,9 @@ ActiveRecord::Schema.define(version: 20150130211022) do
     t.text     "add"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.integer  "pkgroup"
+    t.integer  "vote"
   end
 
 end
