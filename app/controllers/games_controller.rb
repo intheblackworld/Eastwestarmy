@@ -1,12 +1,16 @@
 class GamesController < ApplicationController
 
-  before_action :find_east_and_west, only: [:round1, :round2, :round3, :vote_e, :vote_w]
+  before_action :find_east_and_west, only: [:round1, :round2, :round3,:over, :vote_e, :vote_w]
 
   def index
     @games = Game.all
+    redirect_to round1_game_path(1)
 
-    # @user = current_user
-    # @user.game_id =
+  end
+
+def over
+    @east_votes = @game.votes.east.count
+    @west_votes = @game.votes.west.count
   end
 
   def round1
@@ -38,7 +42,8 @@ class GamesController < ApplicationController
   # private
 
   def find_east_and_west
-    @game = Game.find(params[:id])
+    # @game = Game.find(params[:id])
+    @game = Game.find(1)
     @east = @game.east
     @west = @game.west
     @user = current_user

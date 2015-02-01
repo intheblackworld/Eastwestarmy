@@ -1,0 +1,32 @@
+
+<div class="text-center">
+
+<%= "投票結果" %> <br>
+
+<% if @east_votes > @west_votes %>
+  <div class="bg-info">
+ <%= "獲得最高票的餐廳是 " + @east.name %> <br>
+  </div>
+  <div class="bg-primary">
+<%= "恭喜抽中免費晚餐的是" %> <br>
+</div>
+
+<% elsif @east_votes < @west_votes %>
+ <div class="bg-info">
+  <%= "獲得最高票的餐廳是 " + @west.name %> <br>
+  </div>
+  <div class="bg-primary">
+  <%= "恭喜抽中免費晚餐的是" %> <br>
+</div>
+
+<% elsif @east_votes = @west_votes %>
+ <div class="bg-info">
+  <%= "恭喜兩家餐廳獲得同樣的票數！" %> <br>
+  </div>
+   <div class="bg-primary">
+  <%= "但此次投票不抽獎，不要難過，下次再來！" %> <br>
+</div>
+<% end %>
+
+</div>
+

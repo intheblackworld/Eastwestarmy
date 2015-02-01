@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'homes#index'
+  # root 'games#index'
+
+  root :to => "games#index", :id => '1'
 
   resources :games do
     member do
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
       get 'round3'
       post 'vote_e'
       post 'vote_w'
+      get 'over'
     end
   end
 

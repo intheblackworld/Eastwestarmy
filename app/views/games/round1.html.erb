@@ -1,41 +1,164 @@
+
+
+
+
+<form>
+<h1 class="text-center">請選擇Round1最佳美食</h1><br>
+
+<div class="text-center">
+時間倒數:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>setTimeout</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id='div1'>
+        </div>
+    </form>
+</body>
+</html>
+
+<script type="text/javascript">
+
+//設定倒數秒數
+var t = 10;
+
+//顯示倒數秒收
+function showTime()
+{
+    t -= 1;
+    document.getElementById('div1').innerHTML= t;
+    
+    if(t==0)
+    {
+        location.href='round2';
+    }
+    
+    //每秒執行一次,showTime()
+    setTimeout("showTime()",1000);
+}
+
+//執行showTime()
+"   "+showTime();
+</script>
+
+
+
 <%= render "alert" %>
 
-東軍展示區
-店名 <%= @east.name %>
-菜色 <%= @east.food %>
-菜色描述 <%= @east.description %>
-地址 <%= @east.add %>
-電話 <%= @east.tel %>
-投給 <%= button_to [@east.name, @east.food], vote_e_game_path(@game), method: :post %>
-<br>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-2">
+<div>
+投下 <%= button_to [@west.name, @west.food], vote_w_game_path(@game), method: :post , class: 'btn btn-small btn-block btn-default' %>
+
+</div>
+</div>
+
+<div class="col-md-2"></div>
+
+<div class="col-md-2">
+投下 <%= button_to [@east.name, @east.food], vote_e_game_path(@game), method: :post , class: 'btn btn-small btn-block btn-default' %>
+</div>
+<div class="col-md-3"></div>
+</div>
+
 <br>
 
-東軍投票區
+
+<div class="row">
+  <div class="col-md-2">
+      <div class="row">
+      <div class="btn btn-danger btn-block">West Vote</div>
+      <div class="borderw">
+          
+西軍投票區<br>
 <% if @vote.vote_for == 'east' %>
-  <%= @user.nickname %>
-  <%= @user.email %>
-<% elsif @vote.vote_for == 'west' %>
   <%= "" %>
+<% elsif @vote.vote_for == 'west' %>
+  <%= @user.name %>
+  <%= @user.email %>
 <% end %>
 <br>
 <br>
+      </div>
+      
+      </div>
+  </div>
 
-西軍展示區
-店名 <%= @west.name %>
-菜色 <%= @west.food %>
-菜色描述 <%= @west.description %>
-地址 <%= @west.add %>
+
+      
+
+
+  <div class="col-md-4 ">
+      <div class="row ">
+      <div class="btn btn-danger btn-block">West store</div>
+      <div class="borderw">
+          <img src="http://school.eztable.com/wp-content/uploads/sites/4/2013/03/QCPxiHaNahu2pH_jMUy38XVmkwzvrvto_DBjY7GthpY.jpg" class="img-responsive" alt="Responsive image"></img>
+         西軍展示區<br>
+店名 <%= @west.name %><br>
+菜色 <%= @west.food %><br>
+菜色描述 <%= @west.description %><br>
+地址 <%= @west.add %><br>
 電話 <%= @west.tel %>
-投給 <%= button_to [@west.name, @west.food], vote_w_game_path(@game), method: :post %>
-<br>
-<br>
 
-西軍投票區
+      </div>
+    </div> 
+  </div>
+
+  <div class="col-md-4">
+      <div class="row">
+      <div class="btn btn-primary btn-block">East store</div>
+      <div class="borderw">
+          <img src="http://images.mobile.eu.org/upload/20140609004034877420.jpg" class="img-responsive" alt="Responsive image"></img>
+          
+東軍展示區<br>
+店名 <%= @east.name %><br>
+菜色 <%= @east.food %><br>
+菜色描述 <%= @east.description %><br>
+地址 <%= @east.add %><br>
+電話 <%= @east.tel %>
+
+      </div>
+    </div> 
+  </div>
+  <div class="col-md-2">
+      <div class="row">
+      <div class="btn btn-primary btn-block">East Vote</div>
+      <div class="votearea">
+          
+
+
+
+東軍投票區<br>
 <% if @vote.vote_for == 'east' %>
-  <%= "" %>
-<% elsif @vote.vote_for == 'west' %>
-  <%= @user.nickname %>
+  <%= @user.name %>
   <%= @user.email %>
+<% elsif @vote.vote_for == 'west' %>
+  <%= "" %>
 <% end %>
 <br>
 <br>
+
+
+
+        
+      </div>
+      
+    </div> 
+  </div>
+</div>

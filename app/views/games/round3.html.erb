@@ -1,45 +1,155 @@
+
+<form>
+<h1 class="text-center">請選擇Round3最佳美食</h1><br>
+
+<div class="text-center">
+
+時間倒數:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>setTimeout</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id='div1'>
+        </div>
+    </form>
+</body>
+</html>
+
+<script type="text/javascript">
+
+//設定倒數秒數
+var t = 60;
+
+//顯示倒數秒收
+function showTime()
+{
+    t -= 1;
+    document.getElementById('div1').innerHTML= t;
+    
+    if(t==0)
+    {
+        location.href='over';
+    }
+    
+    //每秒執行一次,showTime()
+    setTimeout("showTime()",1000);
+}
+
+//執行showTime()
+"   "+showTime();
+</script>
+
+
 <%= render "alert" %>
+</div>
 
-東軍展示區
-店名 <%= @east.name %>
-菜色 <%= @east.food %>
-菜色描述 <%= @east.description %>
-地址 <%= @east.add %>
-電話 <%= @east.tel %>
-投給 <%= button_to [@east.name, @east.food], vote_e_game_path(@game), method: :post %>
-<br>
+
+
+
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-2">
+投下 <%= button_to [@west.name, @west.food], vote_w_game_path(@game), method: :post , class: 'btn btn-small btn-block btn-default' %>
+</div>
+
+<div class="col-md-2"></div>
+
+<div class="col-md-2">
+投下 <%= button_to [@east.name, @east.food], vote_e_game_path(@game), method: :post , class: 'btn btn-small btn-block btn-default' %>
+</div>
+<div class="col-md-3"></div>
+</div>
+
 <br>
 
+
+<div class="row">
+  <div class="col-md-2">
+      <div class="row">
+      <div class="btn btn-danger btn-block">
+西軍得票數
+<%= @game.votes.west.count %>
+
+
+
+      </div>
+      <div class="borderw">
+          
+西軍投票區 <br>
+<% @game.votes.west.each do |west| %>
+   <%= @user.name %>
+  <%= @user.email %><br>
+<% end %>
+      </div>
+      
+      </div>
+  </div>
+
+
+      
+
+
+  <div class="col-md-4 ">
+      <div class="row ">
+      <div class="btn btn-danger btn-block">West store</div>
+      <div class="borderw">
+          <iframe width="420" height="315" src="https://www.youtube.com/embed/XqBQsAMYkM0" frameborder="0" allowfullscreen></iframe>
+          西軍展示區<br>
+店名 <%= @west.name %><br>
+菜色 <%= @west.food %><br>
+
+
+      </div>
+    </div> 
+  </div>
+
+  <div class="col-md-4">
+      <div class="row">
+      <div class="btn btn-primary btn-block">East store</div>
+      <div class="borderw">
+          <iframe width="420" height="315" src="https://www.youtube.com/embed/HzrofOTI5o8" frameborder="0" allowfullscreen></iframe>
+          
+東軍展示區<br>
+店名 <%= @east.name %><br>
+菜色 <%= @east.food %><br>
+
+
+      </div>
+    </div> 
+  </div>
+  <div class="col-md-2">
+      <div class="row">
+      <div class="btn btn-primary btn-block">
 東軍得票數
 <%= @game.votes.east.count %>
-<br>
-<br>
+
+</div>
+      <div class="votearea">
+          
+
+
 
 東軍投票區 <br>
 <% @game.votes.east.each do |east| %>
-  <%= east.user.email %> <br>
+   <%= @user.name %>
+  <%= @user.email %><br>
+
+
 <% end %>
 <br>
 <br>
 
-西軍展示區
-店名 <%= @west.name %>
-菜色 <%= @west.food %>
-菜色描述 <%= @west.description %>
-地址 <%= @west.add %>
-電話 <%= @west.tel %>
-投給 <%= button_to [@west.name, @west.food], vote_w_game_path(@game), method: :post %>
-<br>
-<br>
 
-西軍得票數
-<%= @game.votes.west.count %>
-<br>
-<br>
 
-西軍投票區 <br>
-<% @game.votes.west.each do |west| %>
-  <%= west.user.email %> <br>
-<% end %>
-<br>
-<br>
+
+
+
+        
+      </div>
+      
+    </div> 
+  </div>
+</div>

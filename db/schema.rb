@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150130213155) do
-=======
 ActiveRecord::Schema.define(version: 20150131093001) do
->>>>>>> dc448754244242f5c95a5c32a3ab918c643ac1d3
 
   create_table "easts", force: true do |t|
     t.string   "name"
@@ -29,15 +25,6 @@ ActiveRecord::Schema.define(version: 20150131093001) do
     t.integer  "game_id"
   end
 
-<<<<<<< HEAD
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-=======
   add_index "easts", ["game_id"], name: "index_easts_on_game_id", unique: true
 
   create_table "games", force: true do |t|
@@ -52,30 +39,20 @@ ActiveRecord::Schema.define(version: 20150131093001) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,     null: false
->>>>>>> dc448754244242f5c95a5c32a3ab918c643ac1d3
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-<<<<<<< HEAD
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-=======
-    t.string   "nickname"
-    t.integer  "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.boolean  "vote_east",              default: false
     t.boolean  "vote_west",              default: false
->>>>>>> dc448754244242f5c95a5c32a3ab918c643ac1d3
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-<<<<<<< HEAD
-=======
   create_table "votes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -87,7 +64,6 @@ ActiveRecord::Schema.define(version: 20150131093001) do
   add_index "votes", ["game_id"], name: "index_votes_on_game_id"
   add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
->>>>>>> dc448754244242f5c95a5c32a3ab918c643ac1d3
   create_table "wests", force: true do |t|
     t.string   "name"
     t.string   "food"
