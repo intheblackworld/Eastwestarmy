@@ -7,7 +7,7 @@ zh-TW:
 
     attributes:
       user:
-        nickname: '暱稱'
+        name: '暱稱'
         email: '信箱'
         password: '密碼'
         product: '行程'
