@@ -9,11 +9,11 @@
   <div class="overlay-content">
     <% if @east_votes > @west_votes %>
  <p> <%= "獲得最高票的餐廳是 東軍的" + @east.name %> </p><hr>
-  <h2><%= "恭喜抽中免費晚餐的是 " + @game.votes.east.sample.user.name + "，已寄免費餐卷到" + @game.votes.east.sample.user.email %> </p>
+  <h2><%= "恭喜抽中免費晚餐的是 " + @east_lotto_winner + "，已寄免費餐卷到" + @east_lotto_winner.email %> </p>
 
 <% elsif @east_votes < @west_votes %>
   <p><%= "獲得最高票的餐廳是 西軍的" + @west.name %> </p>
-  <h2><%= "恭喜抽中免費晚餐的是 " + @game.votes.west.sample.user.name + "，已寄免費餐卷到" + @game.votes.west.sample.user.email %> </h2>
+  <h2><%= "恭喜抽中免費晚餐的是 " + @west_lotto_winner + "，已寄免費餐卷到" + @west_lotto_winner.email %> </p>
 
 <% elsif @east_votes = @west_votes %>
   <p><%= "恭喜兩家餐廳不分上下獲得同樣的票數！" %> </p>

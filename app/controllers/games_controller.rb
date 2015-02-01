@@ -11,6 +11,8 @@ class GamesController < ApplicationController
 def over
     @east_votes = @game.votes.east.count
     @west_votes = @game.votes.west.count
+    @east_lotto_winner = @game.votes.east.sample.user.name
+    @west_lotto_winner = @game.votes.west.sample.user.name
   end
 
   def round1
