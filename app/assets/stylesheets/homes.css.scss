@@ -4,13 +4,15 @@
 $yellow: #e8c63d;
 
 p{
+  border-bottom: 1px solid #333;
   margin: 0;
   padding: 0;
 }
 
 
 .content-item{
-  background: url(http://dribbble.s3.amazonaws.com/users/21389/screenshots/537633/image_ink_logo.png);
+  background: url(http://i.imgur.com/LKo1Pbz.png);
+  background-size: 400px 300px;
   @include backface-visibility( hidden );
   height: 300px;
   margin: 20px auto;
@@ -56,7 +58,7 @@ p{
     top: 0;
     @include transition(all .3s ease-out);
     h2{
-      border-bottom: 1px solid #333;
+      
       padding: 0 0 12px;
     }
   }

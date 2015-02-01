@@ -1,31 +1,25 @@
-<%= "投票結果" %> <br>
-
-<% if @east_votes > @west_votes %>
-  <%= "獲得最高票的餐廳是 東軍的" + @east.name %> <br>
-  <%= "恭喜抽中免費晚餐的是 " + @game.votes.east.sample.user.name + "，已寄免費餐卷到" + @game.votes.east.sample.user.email %> <br>
-
-<% elsif @east_votes < @west_votes %>
-  <%= "獲得最高票的餐廳是 西軍的" + @west.name %> <br>
-  <%= "恭喜抽中免費晚餐的是 " + @game.votes.west.sample.user.name + "，已寄免費餐卷到" + @game.votes.west.sample.user.email %> <br>
-
-<% elsif @east_votes = @west_votes %>
-  <%= "恭喜兩家餐廳不分上下獲得同樣的票數！" %> <br>
-  <%= "但此次投票不抽獎，不要難過，下次再來！" %> <br>
-
-
-<% end %>
+ <br>
 
 <div class="content-item">
   
   <div class="overlay"></div>
   
-  <div class="corner-overlay-content">Info</div>
+  <div class="corner-overlay-content">看結果</div>
   
   <div class="overlay-content">
-    <h2>Image Ink Logo</h2>
-    <p>Logo for a screen printing company. They wanted a detachable/recognizable brand that didn't need the name of the company.</p>
-  </div>
+    <% if @east_votes > @west_votes %>
+ <p> <%= "獲得最高票的餐廳是 東軍的" + @east.name %> </p><hr>
+  <h2><%= "恭喜抽中免費晚餐的是 " + @game.votes.east.sample.user.name + "，已寄免費餐卷到" + @game.votes.east.sample.user.email %> </p>
+
+<% elsif @east_votes < @west_votes %>
+  <p><%= "獲得最高票的餐廳是 西軍的" + @west.name %> </p>
+  <h2><%= "恭喜抽中免費晚餐的是 " + @game.votes.west.sample.user.name + "，已寄免費餐卷到" + @game.votes.west.sample.user.email %> </h2>
+
+<% elsif @east_votes = @west_votes %>
+  <p><%= "恭喜兩家餐廳不分上下獲得同樣的票數！" %> </p>
+  <h2><%= "但此次投票不抽獎，不要難過，下次再來！" %> </h2>
   
+<% end %>  
 </div>
 
 
