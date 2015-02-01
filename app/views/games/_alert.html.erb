@@ -1,0 +1,9 @@
+確認
+<% if @vote.vote_for == 'east' %>
+  <%= '你目前投給：' + @east.name + '/' + @east.food %>
+<% elsif @vote.vote_for == 'west' %>
+  <%= '你目前投給：' + @west.name + '/' + @west.food %>
+<% elsif @vote.vote_for == nil %>
+  <%= "你尚未投票！" %>
+<% end %>
+<br>

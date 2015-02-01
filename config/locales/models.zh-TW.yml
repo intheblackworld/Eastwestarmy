@@ -1,0 +1,24 @@
+zh-TW:
+  activerecord:
+
+    models:
+      user: 會員
+      product: '行程'
+
+    attributes:
+      user:
+        nickname: '暱稱'
+        email: '信箱'
+        password: '密碼'
+        product: '行程'
+        gender: '性別'
+        password_confirmation: '密碼確認'
+        current_password: '舊密碼'
+      product:
+        title: '行程名稱'
+  devise:
+    registrations:
+      signed_up: 'Welcome! You have signed up successfully.'
+    sessions:
+      signed_in: '回到戰局'
+      signed_out: '脫離戰局'
