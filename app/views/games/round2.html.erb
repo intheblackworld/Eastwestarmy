@@ -82,8 +82,8 @@ function showTime()
           
 西軍投票區 <br>
 <% @game.votes.west.each do |west| %>
-   <%= @user.name %>
-  <%= @user.email %> <br>
+   <%= west.user.name %>
+  <%= west.user.email %> <br>
 <% end %>
       </div>
       
@@ -136,8 +136,8 @@ function showTime()
 
 東軍投票區 <br>
 <% @game.votes.east.each do |east| %>
-   <%= @user.name %>
-  <%= @user.email %> <br>
+   <%= east.user.name %>
+  <%= east.user.email %> <br>
 
 
 <% end %>
